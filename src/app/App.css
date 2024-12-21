@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
+
+.font-alfa-slab-one {
+    font-family: 'Alfa Slab One', cursive;
+   }
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body, #root {
+    
+    margin: 0;
+    padding: 0;
+  }
+
+  .css-1tktgsa-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
+    left: 0 !important;  /* Elimina el desplazamiento negativo */
+    width: 100% !important;  /* Asegura que ocupe todo el ancho */
+    max-width: 100% !important;  /* Asegura que no haya un máximo de ancho */
+}
+
