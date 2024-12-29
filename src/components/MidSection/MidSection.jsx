@@ -13,8 +13,8 @@ function MidSection() {
         alignItems: 'center',
         justifyContent: 'center',
         textAlign: 'center',
-        height: '100vh',
-        padding: 2,
+        height: '40vh',
+        backgroundColor:'#F3F3F3',
       }}
     >
       <Box>
