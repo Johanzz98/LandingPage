@@ -126,7 +126,7 @@ export default function Navbar() {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        <Toolbar sx={{ display: 'flex', flexDirection: 'column', width: '100%', padding: '0 32px 14px' }}>
+        <Toolbar sx={{ display: 'flex', flexDirection: 'column', width: '100%', padding: '0 32px 14px',   borderBottom: handleNavbarStyle().backgroundColor === 'white' ? '1.2px solid #e4e4e4' : 'none', }}>
           <Box
             sx={{
               display: { xs: 'flex', sm: 'none' },
@@ -167,7 +167,7 @@ export default function Navbar() {
             }}>
             <LogoSVG
   color={navbarColor || hover || scrollPosition > 25 ? '#111' : '#ffffff'} // #111 para negro
-  size={logoSize ? '50%' : '80%'}
+  size={logoSize ? '50%' : '50%'}
 />
             </Box>
 
