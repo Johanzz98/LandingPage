@@ -4,7 +4,7 @@ import ImagenesPisoCuarto from './ImagenesPisoCuarto';
 
 const PisoCuarto = () => {
   return (
-    <Box 
+    <Box
       sx={{
         display: 'flex',
         flexDirection: 'column',
@@ -14,10 +14,10 @@ const PisoCuarto = () => {
         textAlign: 'center',
       }}
     >
-      <Typography sx={{fontSize:'32px', marginBottom:'12px'}}>
+      <Typography sx={{ fontSize: '32px', marginBottom: '12px' }}>
         ¡Te damos la bienvenida a Publicidad Sucre Creativa!
       </Typography>
-      <Typography sx={{fontSize:'16px', fontWeight:'500'}}>
+      <Typography sx={{ fontSize: '16px', fontWeight: '500' }}>
         Contactanos para personalizar tu experiencia{' '}
         <a
           href="https://wa.me/11234567890"
@@ -36,9 +36,9 @@ const PisoCuarto = () => {
           backgroundColor: '#ffffff33',
           padding: '12px 24px',
           cursor: 'pointer',
-          marginBottom:'64px',
+          marginBottom: '64px',
           position: 'relative', // Necesario para el pseudo-elemento
-         
+
           '&:before': {
             content: '""',
             position: 'absolute',
@@ -54,16 +54,13 @@ const PisoCuarto = () => {
           '&:hover': {
             backgroundColor: '#ffffff66', // Cambio de color de fondo al pasar el mouse
             color: '#000', // Cambio de color del texto
-          
           },
           '&:hover:before': {
             transform: 'scale(0.95)', // El borde parece crecer hacia adentro
           },
         }}
       >
-        <Typography>
-          Discover the Selection
-        </Typography>
+        <Typography>Discover the Selection</Typography>
       </Box>
     </Box>
   );

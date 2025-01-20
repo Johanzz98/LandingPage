@@ -2,10 +2,41 @@ import { Box, Button, Typography } from '@mui/material';
 import Link from 'next/link'; // Importar Link de Next.js
 import React from 'react';
 
+const tituloSegundoBanner = {
+  fontFamily: 'Nunito Sans, sans-serif',
+  fontWeight: 600,
+
+  fontSize: '32px',
+  color: '#111',
+};
+
+const subtitleSegundoBanner = {
+  fontFamily: 'Nunito Sans, sans-serif',
+  fontWeight: 500,
+
+  fontSize: '16px',
+  color: '#767676;',
+};
+
+const buttonSegundoBanner = {
+  fontFamily: 'Nunito Sans, sans-serif',
+  fontWeight: 500,
+
+  fontSize: '16px',
+  color: '#FFFFFF;',
+  '&:hover': {
+    color: '#111',
+  },
+};
+
 export default function SegundoBanner() {
   return (
-    <Box sx={{ position: 'relative', width: '100%', height: '400px' }}> {/* Ajusta el height aquí */}
-      <Link href="/pagina-destino" passHref> {/* Envolvemos todo el contenido en el Link */}
+    <Box sx={{ position: 'relative', width: '100%', height: '400px' }}>
+      {' '}
+      {/* Ajusta el height aquí */}
+      <Link href="/pagina-destino" passHref>
+        {' '}
+        {/* Envolvemos todo el contenido en el Link */}
         <Box
           sx={{
             display: 'flex',
@@ -39,24 +70,25 @@ export default function SegundoBanner() {
             zIndex: 1, // Añadir un z-index para asegurarse de que se vea por encima de la imagen
           }}
         >
-          <Typography>
+          <Typography sx={tituloSegundoBanner}>
             Momentos para Recordar
           </Typography>
-          <Typography>
+          <Typography sx={subtitleSegundoBanner}>
             Los mejores recuerdos crean los mejores regalos
           </Typography>
-          <Box sx={{marginTop:'12px'}}>
-          <Button
-            sx={{
-              backgroundColor: '#111',
-              padding: '8px 16px',
-              '&:hover': {
-                backgroundColor: '#ffffff', // Color de fondo al pasar el mouse
-              },
-            }}
-          >
-            <Typography>Comprar</Typography>
-          </Button>
+          <Box sx={{ marginTop: '12px' }}>
+            <Button
+              sx={{
+                backgroundColor: '#111',
+                padding: '8px 16px',
+                '&:hover': {
+                  backgroundColor: '#ffffff', // Color de fondo al pasar el mouse
+                  color: '#111',
+                },
+              }}
+            >
+              <Typography sx={buttonSegundoBanner}>Comprar</Typography>
+            </Button>
           </Box>
         </Box>
       </Link>

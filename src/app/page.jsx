@@ -1,18 +1,15 @@
-"use client";
-import React, { useState, useEffect } from "react";
-import { Box, ThemeProvider, createTheme } from "@mui/material";
-
-import "./App.css";
-import Navbar from "@/Components/Navbar/Navbar";
-import Banner from "@/components/Banner/Banner";
-import MidSection from "@/components/MidSection/MidSection";
-import PisoTercero from "@/components/PisoTercero/PisoTercero";
-import SegundoBanner from "@/components/SegundoBanner/SegundoBanner";
-import PisoCuarto from "@/components/PisoCuarto/PisoCuarto";
-import ThreeBanner from "@/components/ThreeBanner/ThreeBanner";
-import LastPhoto from "@/components/LastPhoto/LastPhoto";
-import Footer from "@/components/Footer/Footer";
-import UltimoPiso from "@/components/UltimoPiso/UltimoPiso";
+'use client';
+import React, { useState, useEffect } from 'react';
+import { Box, ThemeProvider, createTheme } from '@mui/material';
+import './App.css';
+import Navbar from '@/Components/Navbar/Navbar';
+import Banner from '@/components/Banner/Banner';
+import MidSection from '@/components/MidSection/MidSection';
+import PisoTercero from '@/components/PisoTercero/PisoTercero';
+import SegundoBanner from '@/components/SegundoBanner/SegundoBanner';
+import PisoCuarto from '@/components/PisoCuarto/PisoCuarto';
+import LastPhoto from '@/components/LastPhoto/LastPhoto';
+import Footer from '@/components/Footer/Footer';
 
 const theme = createTheme();
 
@@ -32,10 +29,10 @@ export default function Page() {
         {isLoading ? (
           <Box
             sx={{
-              width: "100vw",
-              height: "100vh",
-              backgroundColor: "white",
-              position: "absolute",
+              width: '100vw',
+              height: '100vh',
+              backgroundColor: 'white',
+              position: 'absolute',
               top: 0,
               left: 0,
             }}
@@ -48,10 +45,9 @@ export default function Page() {
             <PisoTercero />
             <SegundoBanner />
             <PisoCuarto />
-            <LastPhoto/>
-           
-          <Footer/>
-           
+            <LastPhoto />
+
+            <Footer />
           </>
         )}
       </Box>

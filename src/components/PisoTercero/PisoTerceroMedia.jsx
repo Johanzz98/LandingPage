@@ -3,44 +3,43 @@ export const itemData = [
     img: '/PisoTercero/Camisa.jpg',
     title: 'Breakfast',
     link: '/breakfast',
-    name: "Poleras Personalizadas 100% Algodon",
+    name: 'Poleras Personalizadas 100% Algodon',
     price: 9.999,
-    description: "Some text about the product..",
-    talla: ["M", "L", "XL", "XXL"],
+    description: 'Some text about the product..',
+    talla: ['M', 'L', 'XL', 'XXL'],
   },
   {
     img: '/PisoTercero/Carcasa.jpg',
     title: 'Burger',
-    link: '/burger'
+    link: '/burger',
   },
   {
     img: '/PisoTercero/Cartuchera.jpg',
     title: 'Camera',
-    link: '/camera'
+    link: '/camera',
   },
   {
     img: '/PisoTercero/Chapas.jpg',
     title: 'Camera',
-    link: '/camera'
+    link: '/camera',
   },
   {
     img: '/PisoTercero/Metalico.jpg',
     title: 'Camera',
-    link: '/camera'
+    link: '/camera',
   },
- 
+
   {
     img: '/PisoTercero/Spotify.jpg',
     title: 'Camera',
-    link: '/camera'
+    link: '/camera',
   },
   {
     img: '/PisoTercero/Tazas.jpg',
     title: 'Camera',
-    link: '/camera'
+    link: '/camera',
   },
 ];
-
 
 export const responsive = {
   desktop: {

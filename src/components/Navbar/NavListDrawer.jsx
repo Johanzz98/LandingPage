@@ -1,9 +1,17 @@
 import React, { useState } from 'react';
-import { Box, List, ListItem, ListItemButton, ListItemText, Drawer, IconButton, Divider, Typography } from '@mui/material';
-import { KeyboardArrowDown, KeyboardArrowUp } from '@mui/icons-material';
+import {
+  Box,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  Drawer,
+  IconButton,
+  Divider,
+  Typography,
+} from '@mui/material';
 import RegalosDrawer from './DrawerComponent/Regalos/RegalosDrawer';
-import MenuIcon from '@mui/icons-material/Menu';
-import LogoSVG from "../../../public/SVG/DolceGabanna/dolce";
+import LogoSVG from '../../../public/SVG/DolceGabanna/dolce';
 import CloseIcon from '@mui/icons-material/Close';
 import PolerasDrawer from './DrawerComponent/Poleras/polerasDrawer';
 import PosterDrawer from './DrawerComponent/Poster/PosterDrawer';
@@ -13,11 +21,11 @@ import TazasDrawer from './DrawerComponent/Tazas/TazasDrawer';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 const contact = {
   textAlign: 'center',
-  fontFamily: "Roboto, Helvetica, Arial, sans-serif",
+  fontFamily: 'Roboto, Helvetica, Arial, sans-serif',
   fontWeight: 400,
-  fontSize: "1rem",
+  fontSize: '1rem',
   lineHeight: 1.5,
-  letterSpacing: "0.00938em",
+  letterSpacing: '0.00938em',
   cursor: 'pointer',
 };
 
@@ -29,47 +37,53 @@ export default function NavListDrawer({ setOpen }) {
   const [isTarjetasOpen, setIsTarjetasOpen] = useState(false);
   const [isTazasOpen, setIsTazasOpen] = useState(false);
 
-  const toggleRegalosDrawer = () => setIsRegalosOpen(prevState => !prevState);
-  const togglePolerasDrawer = () => setIsPolerasOpen(prevState => !prevState);
-  const togglePosterDrawer = () => setIsPosterOpen(prevState => !prevState);
-  const toggleStickerDrawer = () => setIsStickerOpen(prevState => !prevState);
-  const toggleTarjetasDrawer = () => setIsTarjetasOpen(prevState => !prevState);
-  const toggleTazasDrawer = () => setIsTazasOpen(prevState => !prevState);
-  
+  const toggleRegalosDrawer = () => setIsRegalosOpen((prevState) => !prevState);
+  const togglePolerasDrawer = () => setIsPolerasOpen((prevState) => !prevState);
+  const togglePosterDrawer = () => setIsPosterOpen((prevState) => !prevState);
+  const toggleStickerDrawer = () => setIsStickerOpen((prevState) => !prevState);
+  const toggleTarjetasDrawer = () =>
+    setIsTarjetasOpen((prevState) => !prevState);
+  const toggleTazasDrawer = () => setIsTazasOpen((prevState) => !prevState);
+
   const handleClose = () => setOpen(false);
 
   return (
     <Box sx={{ width: '100vw', height: '100vh' }}>
-         <Box
-      sx={{
-        display: { xs: 'flex', sm: 'none' },
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        padding: '28px 3px 14px',
-        width: '100%',
-      }}
-    >
-      <Box sx={{marginLeft:'12px'}}>
-      <LogoSVG 
-      color={'#111'}
-       size={'80%'} />
-      </Box>  
-      <IconButton
-        color="inherit"
-        size="large"
-        onClick={handleClose}
+      <Box
         sx={{
           display: { xs: 'flex', sm: 'none' },
-          '&:hover': {
-            boxShadow: 'none',
-          },
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          padding: '28px 3px 14px',
+          width: '100%',
         }}
       >
-        <CloseIcon />
-      </IconButton>
+        <Box sx={{ marginLeft: '12px' }}>
+          <LogoSVG color={'#111'} size={'80%'} />
+        </Box>
+        <IconButton
+          color="inherit"
+          size="large"
+          onClick={handleClose}
+          sx={{
+            display: { xs: 'flex', sm: 'none' },
+            '&:hover': {
+              boxShadow: 'none',
+            },
+          }}
+        >
+          <CloseIcon />
+        </IconButton>
       </Box>
-        <Divider sx={{marginBottom:'16px', marginTop:'4px', height:'1.5px',backgroundColor:'#111'}}/>
-        
+      <Divider
+        sx={{
+          marginBottom: '16px',
+          marginTop: '4px',
+          height: '1.5px',
+          backgroundColor: '#111',
+        }}
+      />
+
       <nav>
         <List>
           <ListItem disablePadding>
@@ -127,13 +141,13 @@ export default function NavListDrawer({ setOpen }) {
       </Drawer>
 
       <Drawer
-  anchor="right"
-  open={isPolerasOpen}
-  onClose={togglePolerasDrawer}
-  sx={{ width: '100vw', height: '100vh' }}
->
-  <PolerasDrawer handleClose={togglePolerasDrawer} />
-</Drawer>
+        anchor="right"
+        open={isPolerasOpen}
+        onClose={togglePolerasDrawer}
+        sx={{ width: '100vw', height: '100vh' }}
+      >
+        <PolerasDrawer handleClose={togglePolerasDrawer} />
+      </Drawer>
 
       <Drawer
         anchor="right"
@@ -170,21 +184,23 @@ export default function NavListDrawer({ setOpen }) {
       >
         <TazasDrawer handleClose={toggleTazasDrawer} />
       </Drawer>
-      <Box sx={{
-          width: '100%', 
-          height: '40px', 
+      <Box
+        sx={{
+          width: '100%',
+          height: '40px',
           backgroundColor: '#f0f0f0',
           position: 'fixed',
-          bottom: 0, 
+          bottom: 0,
           left: 0,
           zIndex: 1100,
           display: 'flex',
-          justifyContent: 'center', 
+          justifyContent: 'center',
           alignItems: 'center',
-          padding: '10px 0', 
-        }}>
-          <Typography sx={contact}>Contactanos</Typography>
-        </Box>
+          padding: '10px 0',
+        }}
+      >
+        <Typography sx={contact}>Contactanos</Typography>
+      </Box>
     </Box>
   );
 }

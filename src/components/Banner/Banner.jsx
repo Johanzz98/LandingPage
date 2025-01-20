@@ -7,7 +7,8 @@ export default function Banner() {
       sx={{
         width: '100%',
         height: '100vh', // Hace que el contenedor tenga el tamaño completo de la ventana
-        backgroundImage: 'url("https://images.pexels.com/photos/9594428/pexels-photo-9594428.jpeg")', // URL de la imagen de fondo
+        backgroundImage:
+          'url("https://images.pexels.com/photos/9594428/pexels-photo-9594428.jpeg")', // URL de la imagen de fondo
         backgroundSize: 'cover', // Asegura que la imagen cubra todo el contenedor
         backgroundPosition: 'center', // Centra la imagen en el contenedor
         display: 'flex',

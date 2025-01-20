@@ -1,0 +1,67 @@
+/* Contenedor principal del carousel */
+.carousel-container {
+  margin: 0; /* Eliminar márgenes del contenedor */
+  padding: 0; /* Eliminar rellenos del contenedor */
+  width: 100%; /* Asegurar que ocupe el 100% del contenedor padre */
+  overflow: hidden; /* Asegurar que los elementos no se desborden */
+}
+
+/* Contenedor de los elementos del carousel */
+.carousel {
+  display: flex; /* Alinear los slides de manera horizontal */
+  overflow: hidden; /* Eliminar cualquier desbordamiento */
+  margin: 0; /* Eliminar márgenes */
+  padding: 0; /* Eliminar relleno */
+}
+
+/* Elementos individuales dentro del carousel (slides) */
+.carousel .slick-slide {
+  margin: 0 !important; /* Eliminar márgenes entre los slides */
+  padding: 0 !important; /* Eliminar relleno */
+  flex: 1 0 auto; /* Asegurar que cada slide ocupe el espacio adecuado */
+}
+
+/* Contenedor de los elementos (tracking del carousel) */
+.carousel .slick-track {
+  display: flex; /* Alinear los slides horizontalmente */
+  flex-wrap: nowrap; /* Evitar que los slides se envuelvan a una nueva fila */
+}
+
+/* Las imágenes dentro de los slides */
+.carousel img {
+  width: 100%; /* Hacer que la imagen ocupe el 100% del espacio disponible */
+  height: auto; /* Mantener la proporción de la imagen */
+  display: block; /* Eliminar el espacio debajo de las imágenes */
+  object-fit: cover; /* Asegurar que las imágenes se ajusten bien al tamaño del slide */
+}
+
+/* Opcional: estiliza el botón del carousel para controlar la navegación */
+.carousel .slick-prev,
+.carousel .slick-next {
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo translúcido */
+  border-radius: 50%; /* Botones redondeados */
+  color: #fff; /* Color del ícono */
+  font-size: 24px; /* Tamaño del ícono */
+  z-index: 10; /* Asegura que los botones estén encima de los slides */
+  padding: 10px;
+}
+
+.carousel .slick-prev:hover,
+.carousel .slick-next:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo más oscuro en hover */
+}
+
+/* Opcional: control del espacio entre los slides (si no usas flex) */
+.carousel .slick-slide {
+  margin-right: 0; /* Sin margen a la derecha de cada slide */
+  margin-left: 0; /* Sin margen a la izquierda de cada slide */
+}
+
+/* Si hay un desbordamiento o corte de los slides en pantalla */
+.carousel .slick-list {
+  overflow: hidden; /* Evita desbordamientos */
+}
+.MuiCardMedia-root {
+  height: auto; /* Asegurando que la imagen no ocupe más altura de la que necesita */
+  max-height: 100%; /* Para que la imagen no se desborde */
+}

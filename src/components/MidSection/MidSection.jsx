@@ -14,7 +14,7 @@ function MidSection() {
         justifyContent: 'center',
         textAlign: 'center',
         height: '40vh',
-        backgroundColor:'#F3F3F3',
+        backgroundColor: '#F3F3F3',
       }}
     >
       <Box>
@@ -23,8 +23,13 @@ function MidSection() {
         </Typography>
       </Box>
       <Box>
-        <Typography variant="body1" sx={{ maxWidth: '600px', margin: '0 auto' }}>
-          Si puedes imaginarlo, podemos personalizarlo, perfectos para iluminar las fiestas. Descubra el regalo perfecto en nuestra seleccionada selección.
+        <Typography
+          variant="body1"
+          sx={{ maxWidth: '600px', margin: '0 auto' }}
+        >
+          Si puedes imaginarlo, podemos personalizarlo, perfectos para iluminar
+          las fiestas. Descubra el regalo perfecto en nuestra seleccionada
+          selección.
         </Typography>
       </Box>
       <Box
@@ -49,6 +54,7 @@ function MidSection() {
             variant="body1"
             sx={{
               position: 'relative',
+              cursor: 'pointer', // Cursor pointer
               zIndex: 1, // Aseguramos que el texto esté encima
               color: hoveredRegaloElla ? 'white' : 'inherit', // Cambiar color de texto al pasar el mouse
             }}
@@ -89,6 +95,7 @@ function MidSection() {
             sx={{
               position: 'relative',
               zIndex: 1, // Aseguramos que el texto esté encima
+              cursor: 'pointer', // Cursor pointer
               color: hoveredRegaloEl ? 'white' : 'inherit', // Cambiar color de texto al pasar el mouse
             }}
           >

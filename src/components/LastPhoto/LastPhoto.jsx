@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import { Box, CardContent, Grid, Hidden, Typography } from "@mui/material";
-import Link from "next/link"; // Importa el componente Link de Next.js
+import React, { useState } from 'react';
+import { Box, CardContent, Grid, Hidden, Typography } from '@mui/material';
+import Link from 'next/link'; // Importa el componente Link de Next.js
 
 const setMidIz = {
-  fontFamily: "Nunito Sans, sans-serif",
-  fontOpticalSizing: "auto",
+  fontFamily: 'Nunito Sans, sans-serif',
+  fontOpticalSizing: 'auto',
   fontWeight: 600,
-  textAlign: "center",
-  fontSize: "24px",
-  fontStyle: "normal",
+  textAlign: 'center',
+  fontSize: '24px',
+  fontStyle: 'normal',
   fontVariationSettings: '"wdth" 125, "YTLC" 540',
-  marginTop: "8px",
+  marginTop: '8px',
 };
 
 export default function LastPhoto() {
@@ -19,17 +19,23 @@ export default function LastPhoto() {
   const [hoveredRegalos, setHoveredRegalos] = useState(false);
   const [hoveredExplore, setHoveredExplore] = useState(false);
 
-  const subtitle = {
-    fontFamily: "Nunito Sans, sans-serif",
-    fontOpticalSizing: "auto",
+  const titulo = {
+    fontFamily: 'Nunito Sans, sans-serif',
     fontWeight: 600,
-    textAlign: "center",
-    fontSize: "24px",
-    fontStyle: "normal",
-    fontVariationSettings: '"wdth" 125, "YTLC" 540',
-    marginTop: "8px",
-    cursor: 'pointer',
-    textDecoration: 'underline',
+    textAlign: 'center',
+    fontSize: '32px',
+    color: '#111',
+    padding: '0 0 16px',
+  };
+
+  const subtitle = {
+    fontFamily: 'Nunito Sans, sans-serif',
+    fontWeight: 500,
+    textAlign: 'center',
+    fontSize: '16px',
+    color: '#767676;',
+    width: '38%',
+    marginBottom: '24px',
   };
 
   const boxStyles = {
@@ -40,8 +46,58 @@ export default function LastPhoto() {
     textAlign: 'center',
   };
 
+  const tituloDown = {
+    fontFamily: 'Nunito Sans, sans-serif',
+    fontWeight: 600,
+    textAlign: 'center',
+    fontSize: '16px',
+    color: '#000;',
+
+    marginBottom: '24px',
+  };
+
+  const contactos = {
+    position: 'relative',
+    zIndex: 1, // Aseguramos que el texto esté encima
+    color: hoveredContactanos ? 'white' : '#111', // Cambiar color de texto al pasar el mouse
+    display: 'flex',
+    alignItems: 'center', // Asegura que el texto esté centrado verticalmente
+    justifyContent: 'center', // Asegura que el texto esté centrado horizontalmente
+    marginTop: '6px',
+    fontFamily: 'Nunito Sans, sans-serif',
+    fontWeight: '500',
+    cursor: 'pointer', // Cursor pointer
+    textDecoration: 'underline',
+  };
+  const regalos = {
+    position: 'relative',
+    zIndex: 1, // Aseguramos que el texto esté encima
+    color: hoveredRegalos ? 'white' : '#111', // Cambiar color de texto al pasar el mouse
+    display: 'flex',
+    alignItems: 'center', // Asegura que el texto esté centrado verticalmente
+    justifyContent: 'center', // Asegura que el texto esté centrado horizontalmente
+    marginTop: '6px',
+    fontFamily: 'Nunito Sans, sans-serif',
+    fontWeight: '500',
+    cursor: 'pointer', // Cursor pointer
+    textDecoration: 'underline',
+  };
+
+  const explore = {
+    fontFamily: 'Nunito Sans, sans-serif',
+    fontWeight: '500',
+    position: 'relative',
+    zIndex: 1, // Aseguramos que el texto esté encima
+    color: hoveredExplore ? 'white' : '#111', // Cambiar color de texto al pasar el mouse
+    display: 'flex',
+    alignItems: 'center', // Asegura que el texto esté centrado verticalmente
+    justifyContent: 'center', // Asegura que el texto esté centrado horizontalmente
+    marginTop: '6px',
+    cursor: 'pointer', // Cursor pointer
+    textDecoration: 'underline',
+  };
   return (
-    <Box sx={{ marginBottom:'100px',}}>
+    <Box sx={{ marginBottom: '100px' }}>
       <Box
         sx={{
           display: 'flex',
@@ -50,15 +106,15 @@ export default function LastPhoto() {
           alignItems: 'center',
           textAlign: 'center',
           marginTop: '64px',
-         
         }}
       >
-        <Typography>Louise Vuitton Services</Typography>
-        <Typography>
-          Louis Vuitton offers complementary wrapping on all orders, carefully packaged in the Maison's iconic boxes.
+        <Typography sx={titulo}>Louise Vuitton Services</Typography>
+        <Typography sx={subtitle}>
+          Louis Vuitton offers complementary wrapping on all orders, carefully
+          packaged in the Maison's iconic boxes.
         </Typography>
       </Box>
-      
+
       <Grid container spacing={2} alignItems="center" justifyContent="center">
         {/* Pantallas grandes */}
         <Hidden mdDown>
@@ -69,11 +125,15 @@ export default function LastPhoto() {
                   srcSet="https://cdn.media.amplience.net/i/spreadshirt/2024-12_NA_categories_caps-NY?fmt=auto"
                   loading="lazy"
                   alt="Image 1"
-                  style={{ width: "100%", maxHeight: "600px", objectFit: "contain" }}
+                  style={{
+                    width: '100%',
+                    maxHeight: '600px',
+                    objectFit: 'contain',
+                  }}
                 />
               </CardContent>
               <Box sx={boxStyles}>
-                <Typography>Servicios</Typography>
+                <Typography sx={tituloDown}>Servicios</Typography>
               </Box>
               {/* Contactanos */}
               <Box
@@ -85,39 +145,23 @@ export default function LastPhoto() {
                 onMouseLeave={() => setHoveredContactanos(false)}
               >
                 <Link href="/contactus" passHref>
-                  <Typography
-                    variant="body1"
-                    sx={{
-                      position: 'relative',
-                      zIndex: 1, // Aseguramos que el texto esté encima
-                      color: hoveredContactanos ? 'white' : 'inherit', // Cambiar color de texto al pasar el mouse
-                      display: 'flex',
-                      alignItems: 'center', // Asegura que el texto esté centrado verticalmente
-                      justifyContent: 'center', // Asegura que el texto esté centrado horizontalmente
-                      marginTop: '6px',
-                      cursor: 'pointer', // Cursor pointer
-                      textDecoration: 'underline',
-                    }}
-                  >
-                    Contactanos
-                  </Typography>
-                
+                  <Typography sx={contactos}>Contactanos</Typography>
 
-                <Box
-                  sx={{
-                    position: 'absolute',
-                    bottom: 0,
-                    left: '123px', // Cambia esta propiedad según lo necesites
-                    width: '50%',
-                    height: '4%',
-                    backgroundColor: 'black',
-                    transform: hoveredContactanos ? 'scaleY(1)' : 'scaleY(0)', // Controlamos el tamaño del fondo
-                    transformOrigin: 'bottom',
-                    transition: 'transform 0.3s ease', // Animación del fondo
-                    zIndex: 0, // Fondo debajo del texto
-                  }}
-                />
-                 </Link>
+                  <Box
+                    sx={{
+                      position: 'absolute',
+                      bottom: 0,
+                      left: '123px', // Cambia esta propiedad según lo necesites
+                      width: '50%',
+                      height: '4%',
+                      backgroundColor: 'black',
+                      transform: hoveredContactanos ? 'scaleY(1)' : 'scaleY(0)', // Controlamos el tamaño del fondo
+                      transformOrigin: 'bottom',
+                      transition: 'transform 0.3s ease', // Animación del fondo
+                      zIndex: 0, // Fondo debajo del texto
+                    }}
+                  />
+                </Link>
               </Box>
             </Box>
           </Grid>
@@ -129,54 +173,42 @@ export default function LastPhoto() {
                 src="https://cdn.media.amplience.net/i/spreadshirt/new-2025-Vday-EU-CYOFocus-Tile2?fmt=auto"
                 loading="lazy"
                 alt="Image 2"
-                style={{ width: "100%", maxHeight: "600px", objectFit: "contain" }}
+                style={{
+                  width: '100%',
+                  maxHeight: '600px',
+                  objectFit: 'contain',
+                }}
               />
             </CardContent>
             <Box sx={boxStyles}>
-              <Typography>El arte del regalo</Typography>
+              <Typography sx={tituloDown}>El arte del regalo</Typography>
               <Box
                 sx={{
                   ...boxStyles,
-                  transition: "all 0.3s ease", // Transición suave
-                  position: "relative",
+                  transition: 'all 0.3s ease', // Transición suave
+                  position: 'relative',
                 }}
                 onMouseEnter={() => setHoveredRegalos(true)}
                 onMouseLeave={() => setHoveredRegalos(false)}
               >
                 <Link href="/gifts" passHref>
-                  <Typography
-                    variant="body1"
-                    sx={{
-                      position: "relative",
-                      zIndex: 1, // Aseguramos que el texto esté encima
-                      color: hoveredRegalos ? "white" : "inherit", // Cambiar color de texto al pasar el mouse
-                      display: "flex",
-                      alignItems: "center", // Asegura que el texto esté centrado verticalmente
-                      justifyContent: "center", // Asegura que el texto esté centrado horizontalmente
-                      marginTop: "6px",
-                      cursor: "pointer", // Cursor pointer
-                      textDecoration: "underline",
-                    }}
-                  >
-                    Regalos
-                  </Typography>
-               
+                  <Typography sx={regalos}>Regalos</Typography>
 
-                <Box
-                  sx={{
-                    position: "absolute",
-                    bottom: 0,
-                    left: -105, // Fondo cubre todo el ancho
-                    width: "450%",
-                    height: "100%", // Ajusta la altura si es necesario
-                    backgroundColor: "black",
-                    transform: hoveredRegalos ? "scaleY(1)" : "scaleY(0)", // Controlamos el tamaño del fondo
-                    transformOrigin: "bottom",
-                    transition: "transform 0.3s ease",
-                    zIndex: 0, // Fondo debajo del texto
-                  }}
-                />
-                 </Link>
+                  <Box
+                    sx={{
+                      position: 'absolute',
+                      bottom: 0,
+                      left: -105, // Fondo cubre todo el ancho
+                      width: '450%',
+                      height: '100%', // Ajusta la altura si es necesario
+                      backgroundColor: 'black',
+                      transform: hoveredRegalos ? 'scaleY(1)' : 'scaleY(0)', // Controlamos el tamaño del fondo
+                      transformOrigin: 'bottom',
+                      transition: 'transform 0.3s ease',
+                      zIndex: 0, // Fondo debajo del texto
+                    }}
+                  />
+                </Link>
               </Box>
             </Box>
           </Grid>
@@ -188,55 +220,39 @@ export default function LastPhoto() {
                 srcSet="https://cdn.media.amplience.net/i/spreadshirt/new-2025-Vday-NA-MPFocus-Tile5_1?fmt=auto"
                 loading="lazy"
                 alt="Image 3"
-                style={{ width: "100%", maxHeight: "600px", objectFit: "fill" }}
+                style={{ width: '100%', maxHeight: '600px', objectFit: 'fill' }}
               />
             </CardContent>
             <Box sx={boxStyles}>
-              <Typography>Personalizacion</Typography>
+              <Typography sx={tituloDown}>Personalizacion</Typography>
               {/* Explore */}
               <Box
                 sx={{
                   ...boxStyles,
-                  transition: "all 0.3s ease", // Transición suave
-                  position: "relative",
+                  transition: 'all 0.3s ease', // Transición suave
+                  position: 'relative',
                 }}
                 onMouseEnter={() => setHoveredExplore(true)}
                 onMouseLeave={() => setHoveredExplore(false)}
               >
                 <Link href="/explore" passHref>
-                  <Typography
-                    variant="body1"
-                    sx={{
-                      position: "relative",
-                      zIndex: 1, // Aseguramos que el texto esté encima
-                      color: hoveredExplore ? "white" : "inherit", // Cambiar color de texto al pasar el mouse
-                      display: "flex",
-                      alignItems: "center", // Asegura que el texto esté centrado verticalmente
-                      justifyContent: "center", // Asegura que el texto esté centrado horizontalmente
-                      marginTop: "6px",
-                      cursor: "pointer", // Cursor pointer
-                      textDecoration: "underline",
-                    }}
-                  >
-                    Explore
-                  </Typography>
-              
+                  <Typography sx={explore}>Explore</Typography>
 
-                <Box
-                  sx={{
-                    position: "absolute",
-                    bottom: 0,
-                    left: -95.5, // Fondo cubre todo el ancho
-                    width: "450%",
-                    height: "100%", // Ajusta la altura si es necesario
-                    backgroundColor: "black",
-                    transform: hoveredExplore ? "scaleY(1)" : "scaleY(0)", // Controlamos el tamaño del fondo
-                    transformOrigin: "bottom",
-                    transition: "transform 0.3s ease",
-                    zIndex: 0, // Fondo debajo del texto
-                  }}
-                />
-                  </Link>
+                  <Box
+                    sx={{
+                      position: 'absolute',
+                      bottom: 0,
+                      left: -95.5, // Fondo cubre todo el ancho
+                      width: '450%',
+                      height: '100%', // Ajusta la altura si es necesario
+                      backgroundColor: 'black',
+                      transform: hoveredExplore ? 'scaleY(1)' : 'scaleY(0)', // Controlamos el tamaño del fondo
+                      transformOrigin: 'bottom',
+                      transition: 'transform 0.3s ease',
+                      zIndex: 0, // Fondo debajo del texto
+                    }}
+                  />
+                </Link>
               </Box>
             </Box>
           </Grid>
@@ -251,7 +267,11 @@ export default function LastPhoto() {
                   srcSet="https://cdn.media.amplience.net/i/spreadshirt/2024-12_NA_categories_caps-NY?fmt=auto"
                   loading="lazy"
                   alt="Image 1"
-                  style={{ width: "100%", maxHeight: "600px", objectFit: "contain" }}
+                  style={{
+                    width: '100%',
+                    maxHeight: '600px',
+                    objectFit: 'contain',
+                  }}
                 />
               </CardContent>
             </Box>
@@ -261,7 +281,11 @@ export default function LastPhoto() {
                   srcSet="https://i.pinimg.com/564x/9c/45/9b/9c459b4e11dee487885c2ae182fb8f4b.jpg"
                   loading="lazy"
                   alt="Image 2"
-                  style={{ width: "100%", maxHeight: "600px", objectFit: "contain" }}
+                  style={{
+                    width: '100%',
+                    maxHeight: '600px',
+                    objectFit: 'contain',
+                  }}
                 />
               </CardContent>
             </Box>

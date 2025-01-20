@@ -1,89 +1,91 @@
-import React from "react";
-import { Box, Card, CardContent, CardMedia, Typography, useMediaQuery } from "@mui/material";
-import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import React from 'react';
+import {
+  Box,
+  Card,
+  CardContent,
+  CardMedia,
+  Typography,
+  useMediaQuery,
+} from '@mui/material';
+import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 
 // Estilos
 const cardStyle = {
-  width: "100%",
-  margin: "0 auto 24px",
-  border:'none',
-  boxShadow:0,
-  textAlign: "center",
-  fontFamily: "arial",
-  transition: "transform 0.6s ease",
+  width: '100%',
+  margin: '0 auto 24px',
+  border: 'none',
+  boxShadow: 0,
+  textAlign: 'center',
+  fontFamily: 'arial',
+  transition: 'transform 0.6s ease',
 };
 
 const cardStyle2 = {
-  width: "100%",
-  margin: "0 auto 12px",
-  textAlign: "center",
-  fontFamily: "arial",
-  borderRadius: "12px",
-  boxShadow: "0",
-  transition: "transform 0.6s ease",
-  position: "relative",
+  width: '100%',
+  margin: '0 auto 12px',
+  textAlign: 'center',
+  fontFamily: 'arial',
+  borderRadius: '12px',
+  boxShadow: '0',
+  transition: 'transform 0.6s ease',
+  position: 'relative',
 };
 
-
-
 const mediaStyle = {
-  height: "500px",
-  width: "100%",
-  boxShadow:'none',
-  marginTop: "-6px",
-  objectFit: "contain",
+  height: '500px',
+  width: '100%',
+  boxShadow: 'none',
+  marginTop: '-6px',
+  objectFit: 'contain',
 };
 
 const smallMediaStyle = {
-  height: "100%",
-  width: "100%",
-  objectFit: "cover",
+  height: '100%',
+  width: '100%',
+  objectFit: 'cover',
 };
 
 const priceStyle = {
-  color: "#111",
-  fontSize: "16px",
-  fontWeight: "500",
-  display: "flex",
-  justifyContent: "center", // Centrado del precio
-  fontFamily: "Helvetica, sans-serif",
-  
+  color: '#111',
+  fontSize: '16px',
+  fontWeight: '500',
+  display: 'flex',
+  justifyContent: 'center', // Centrado del precio
+  fontFamily: 'Helvetica, sans-serif',
 };
 
 const NombreProducto = {
-  fontSize: "16px",
-  
-  color: "#111",
-  marginBottom:'6px',
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  fontFamily: "Helvetica, sans-serif",
-  fontOpticalSizing: "auto",
-  overflow: "hidden",
-  textOverflow: "ellipsis",
-  cursor: "pointer", // Para hacer el texto interactivo
-  transition: "text-decoration 0.3s ease", // Para un suave efecto de transición
-  "&:hover": {
-    textDecoration: "underline", // Subraya el texto cuando el mouse pasa por encima
+  fontSize: '16px',
+
+  color: '#111',
+  marginBottom: '6px',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  fontFamily: 'Helvetica, sans-serif',
+  fontOpticalSizing: 'auto',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
+  cursor: 'pointer', // Para hacer el texto interactivo
+  transition: 'text-decoration 0.3s ease', // Para un suave efecto de transición
+  '&:hover': {
+    textDecoration: 'underline', // Subraya el texto cuando el mouse pasa por encima
   },
 };
 
-
-
 const productContainerStyle = {
-  margin: "0 10px",
+  margin: '0 10px',
 };
 
 // Componente principal
 export default function PisoTerceroCard(props) {
-  const isSmallScreen = useMediaQuery("(max-width:800px)");
+  const isSmallScreen = useMediaQuery('(max-width:800px)');
 
   return (
     <Box style={productContainerStyle}>
       {/* Tarjeta principal */}
       <Card sx={isSmallScreen ? cardStyle2 : cardStyle}>
-        <div style={{ position: "relative" }}>
+        <div style={{ position: 'relative' }}>
           {/* Imagen del producto */}
           <CardMedia
             component="img"
@@ -101,7 +103,7 @@ export default function PisoTerceroCard(props) {
               {/* Precio debajo del nombre */}
               <Typography sx={priceStyle}>${props.item.price}</Typography>
               <Typography
-                sx={{ ...descriptionStyle, color: "orange" }}
+                sx={{ ...descriptionStyle, color: 'orange' }}
                 variant="body2"
                 color="text.secondary"
               >
@@ -122,12 +124,14 @@ export default function PisoTerceroCard(props) {
           {/* Icono de favorito */}
           <Box
             style={{
-              position: "absolute",
+              position: 'absolute',
               top: 12,
               right: 46,
             }}
           >
-            <FavoriteBorderOutlinedIcon sx={{ color: "#f73378", fontSize: "20px" }} />
+            <FavoriteBorderOutlinedIcon
+              sx={{ color: '#f73378', fontSize: '20px' }}
+            />
           </Box>
         </div>
       </Card>

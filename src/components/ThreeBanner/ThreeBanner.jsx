@@ -4,8 +4,12 @@ import React from 'react';
 
 export default function ThreeBanner() {
   return (
-    <Box sx={{ position: 'relative', width: '100%', height: '400px' }}> {/* Ajusta el height aquí */}
-      <Link href="/pagina-destino" passHref> {/* Envolvemos todo el contenido en el Link */}
+    <Box sx={{ position: 'relative', width: '100%', height: '400px' }}>
+      {' '}
+      {/* Ajusta el height aquí */}
+      <Link href="/pagina-destino" passHref>
+        {' '}
+        {/* Envolvemos todo el contenido en el Link */}
         <Box
           sx={{
             display: 'flex',
@@ -39,24 +43,22 @@ export default function ThreeBanner() {
             zIndex: 1, // Añadir un z-index para asegurarse de que se vea por encima de la imagen
           }}
         >
-          <Typography>
-            Momentos para Recordar
-          </Typography>
+          <Typography>Momentos para Recordar</Typography>
           <Typography>
             Los mejores recuerdos crean los mejores regalos
           </Typography>
-          <Box sx={{marginTop:'12px'}}>
-          <Button
-            sx={{
-              backgroundColor: '#111',
-              padding: '8px 16px',
-              '&:hover': {
-                backgroundColor: '#ffffff', // Color de fondo al pasar el mouse
-              },
-            }}
-          >
-            <Typography>Comprar</Typography>
-          </Button>
+          <Box sx={{ marginTop: '12px' }}>
+            <Button
+              sx={{
+                backgroundColor: '#111',
+                padding: '8px 16px',
+                '&:hover': {
+                  backgroundColor: '#ffffff', // Color de fondo al pasar el mouse
+                },
+              }}
+            >
+              <Typography>Comprar</Typography>
+            </Button>
           </Box>
         </Box>
       </Link>
